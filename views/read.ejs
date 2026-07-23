@@ -20,7 +20,7 @@
             <h3 class="text-3xl mt-3 tracking-tighter"><%= params.name  %></h3>
             <h5 class="text-zinc-500"><%= params.email  %></h5>
             <div class="flex gap-3 mt-8">
-                <a class="text-blue-600" href="">Edit user</a>
+                <a class="text-blue-600" href="/edit/<%= params._id %>">Edit user</a>
                 <a class="text-red-500" href="/delete/<%= params._id %>">Delete user</a>
                 </div>
             </div>
