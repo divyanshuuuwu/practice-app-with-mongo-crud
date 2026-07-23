@@ -14,8 +14,9 @@ app.get("/", (req,res)=>{
     res.render("index")
 })
 
-app.get("/read", (req,res)=>{
-    res.render("read")
+app.get("/read", async (req,res)=>{
+    let allusers = await userModel.find();
+    res.render("read" , {users: allusers})
 })
 
 app.post("/create", async (req,res)=>{

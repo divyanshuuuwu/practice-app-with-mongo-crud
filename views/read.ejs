@@ -12,15 +12,19 @@
         <a href="/" class="text-blue-500">BACK TO HOME</a>
         <h1 class=" text-3xl mt-10 tracking-tighter mb-3">All user</h1>
         <div class="users flex gap-3 flex-wrap">
-            <div class="user w-72 p-4 bg-zinc-800 rounded-lg">
-                <div class="w-full h-52 rounded-lg bg-zinc-700"></div>
-            <h3 class="text-3xl mt-3 tracking-tighter">div</h3>
-            <h5 class="text-zinc-500">div@gmail.com</h5>
+            <% users.forEach(function(params) { %>
+                <div class="user w-72 p-4 bg-zinc-800 rounded-lg">
+                <div class="w-full h-72 rounded-lg bg-zinc-700 overflow-hidden">
+                    <img class="w-full h-full object-cover object-center" src="<%= params.image %>" alt="">
+                </div>
+            <h3 class="text-3xl mt-3 tracking-tighter"><%= params.name  %></h3>
+            <h5 class="text-zinc-500"><%= params.email  %></h5>
             <div class="flex gap-3 mt-8">
-                <a class="text-zinc-600" href="">Edit user</a>
-                <a class="text-red-500">Delete user</a>
+                <a class="text-blue-600" href="">Edit user</a>
+                <a class="text-red-500" href="">Delete user</a>
                 </div>
             </div>
+            <% }) %>
         </div>
 
     </div>
