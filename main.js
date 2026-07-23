@@ -28,7 +28,12 @@ app.post("/create", async (req,res)=>{
         image: image
     })
 
-    res.send(createdUser)
+    res.redirect("/read")
+})
+
+app.get("/delete/:id", async (req,res)=>{
+    let allusers = await userModel.findOneAndDelete({_id: req.params.id});
+    res.redirect("/read")
 })
 
 
